@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  proxy:
+    image: hoppscotch/proxyscotch
+    restart: unless-stopped
+    ports:
+      - 9159:9159
+    extra_hosts:
+      # Enables loop-back on Linux
+      - "host.docker.internal:host-gateway"
